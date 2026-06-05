@@ -1,0 +1,884 @@
+{
+  "projects": [
+    {
+      "id": "p_zhl",
+      "code": "ZHL",
+      "name": "Z Hauz Limo",
+      "lokasi": "Limo, Depok",
+      "tipe": "Landed House",
+      "totalUnit": 64,
+      "terjual": 41,
+      "legalProject": "DD clear",
+      "legalProjectStatus": "Kuning",
+      "legalOutputScheme": "HGB Induk",
+      "status": "Kuning",
+      "pic": "Legal Officer",
+      "nextAction": "Tutup catatan BPN & validasi peta bidang",
+      "deadline": "2026-06-07",
+      "bookingRisk": 5,
+      "akadRisk": 2,
+      "cashInRisk": 4200000000,
+      "agingMax": 18,
+      "notes": "Aging mendekati SLA internal."
+    },
+    {
+      "id": "p_thp",
+      "code": "THP",
+      "name": "The Hauz Premiere",
+      "lokasi": "Sawangan, Depok",
+      "tipe": "Landed House",
+      "totalUnit": 88,
+      "terjual": 52,
+      "legalProject": "Validasi dokumen",
+      "legalProjectStatus": "Merah",
+      "legalOutputScheme": "HGB Induk",
+      "status": "Merah",
+      "pic": "Kadep SDM & Legal",
+      "nextAction": "War room Notaris/PPAT + lock siteplan agar PBG bisa submit",
+      "deadline": "2026-06-05",
+      "bookingRisk": 10,
+      "akadRisk": 0,
+      "cashInRisk": 9800000000,
+      "agingMax": 31,
+      "notes": "Design belum freeze, PBG belum submit."
+    },
+    {
+      "id": "p_lhc",
+      "code": "LHC",
+      "name": "Le Hauz Cibubur",
+      "lokasi": "Cibubur, Bekasi",
+      "tipe": "Landed House",
+      "totalUnit": 40,
+      "terjual": 40,
+      "legalProject": "Clear",
+      "legalProjectStatus": "Hijau",
+      "legalOutputScheme": "HGB Induk",
+      "status": "Hijau",
+      "pic": "Legal",
+      "nextAction": "Arsip final & monitor rutin",
+      "deadline": "",
+      "bookingRisk": 0,
+      "akadRisk": 0,
+      "cashInRisk": 0,
+      "agingMax": 0,
+      "notes": "Semua gate lolos."
+    },
+    {
+      "id": "p_vhs",
+      "code": "VHS",
+      "name": "Vertihome Serua",
+      "lokasi": "Serua, Tangsel",
+      "tipe": "Cluster",
+      "totalUnit": 56,
+      "terjual": 33,
+      "legalProject": "Peta bidang cek",
+      "legalProjectStatus": "Kuning",
+      "legalOutputScheme": "HGB Induk",
+      "status": "Kuning",
+      "pic": "Legal + Perencanaan",
+      "nextAction": "Submit revisi teknis PBG",
+      "deadline": "2026-06-06",
+      "bookingRisk": 4,
+      "akadRisk": 1,
+      "cashInRisk": 3100000000,
+      "agingMax": 24,
+      "notes": "Revisi PBG terbuka."
+    }
+  ],
+  "units": [
+    {
+      "id": "u1",
+      "projectId": "p_zhl",
+      "blok": "A1-A12",
+      "jumlah": 12,
+      "status": "Akad-Ready",
+      "legalStatus": "Hijau",
+      "note": "Pemecahan selesai."
+    },
+    {
+      "id": "u2",
+      "projectId": "p_zhl",
+      "blok": "B1-B16",
+      "jumlah": 16,
+      "status": "Pemecahan",
+      "legalStatus": "Kuning",
+      "note": "Proses pemecahan."
+    },
+    {
+      "id": "u3",
+      "projectId": "p_thp",
+      "blok": "C-Cluster",
+      "jumlah": 24,
+      "status": "Belum Pecah",
+      "legalStatus": "Merah",
+      "note": "Booking masuk, dokumen belum siap."
+    },
+    {
+      "id": "u4",
+      "projectId": "p_lhc",
+      "blok": "Semua",
+      "jumlah": 40,
+      "status": "Akad-Ready",
+      "legalStatus": "Hijau",
+      "note": "Ready."
+    },
+    {
+      "id": "u5",
+      "projectId": "p_vhs",
+      "blok": "D1-D20",
+      "jumlah": 20,
+      "status": "Peta Bidang",
+      "legalStatus": "Kuning",
+      "note": "Cek peta bidang."
+    }
+  ],
+  "bpn": [
+    {
+      "id": "b_zhl",
+      "projectId": "p_zhl",
+      "stages": [
+        {
+          "name": "Intake Data Tanah",
+          "state": "Selesai"
+        },
+        {
+          "name": "Legal Due Diligence",
+          "state": "Selesai"
+        },
+        {
+          "name": "Validasi Dokumen",
+          "state": "Selesai"
+        },
+        {
+          "name": "Pengukuran / Pemetaan",
+          "state": "Selesai"
+        },
+        {
+          "name": "Proses BPN",
+          "state": "Terkendala"
+        },
+        {
+          "name": "Pemecahan / Pemisahan",
+          "state": "Belum"
+        },
+        {
+          "name": "Verifikasi Legal Output",
+          "state": "Belum"
+        },
+        {
+          "name": "KPR-Ready",
+          "state": "Belum"
+        },
+        {
+          "name": "Akad-Ready",
+          "state": "Belum"
+        },
+        {
+          "name": "Arsip Final",
+          "state": "Belum"
+        }
+      ],
+      "aging": 18,
+      "sla": 14,
+      "evidence": "Tanda terima BPN, screenshot berkas",
+      "note": "Peta bidang perlu koreksi."
+    },
+    {
+      "id": "b_thp",
+      "projectId": "p_thp",
+      "stages": [
+        {
+          "name": "Intake Data Tanah",
+          "state": "Selesai"
+        },
+        {
+          "name": "Legal Due Diligence",
+          "state": "Selesai"
+        },
+        {
+          "name": "Validasi Dokumen",
+          "state": "Terkendala"
+        },
+        {
+          "name": "Pengukuran / Pemetaan",
+          "state": "Belum"
+        },
+        {
+          "name": "Proses BPN",
+          "state": "Belum"
+        },
+        {
+          "name": "Pemecahan / Pemisahan",
+          "state": "Belum"
+        },
+        {
+          "name": "Verifikasi Legal Output",
+          "state": "Belum"
+        },
+        {
+          "name": "KPR-Ready",
+          "state": "Belum"
+        },
+        {
+          "name": "Akad-Ready",
+          "state": "Belum"
+        },
+        {
+          "name": "Arsip Final",
+          "state": "Belum"
+        }
+      ],
+      "aging": 31,
+      "sla": 7,
+      "evidence": "Laporan DD",
+      "note": "Validasi dokumen belum tuntas."
+    },
+    {
+      "id": "b_lhc",
+      "projectId": "p_lhc",
+      "stages": [
+        {
+          "name": "Intake Data Tanah",
+          "state": "Selesai"
+        },
+        {
+          "name": "Legal Due Diligence",
+          "state": "Selesai"
+        },
+        {
+          "name": "Validasi Dokumen",
+          "state": "Selesai"
+        },
+        {
+          "name": "Pengukuran / Pemetaan",
+          "state": "Selesai"
+        },
+        {
+          "name": "Proses BPN",
+          "state": "Selesai"
+        },
+        {
+          "name": "Pemecahan / Pemisahan",
+          "state": "Selesai"
+        },
+        {
+          "name": "Verifikasi Legal Output",
+          "state": "Selesai"
+        },
+        {
+          "name": "KPR-Ready",
+          "state": "Selesai"
+        },
+        {
+          "name": "Akad-Ready",
+          "state": "Selesai"
+        },
+        {
+          "name": "Arsip Final",
+          "state": "Selesai"
+        }
+      ],
+      "aging": 0,
+      "sla": 21,
+      "evidence": "Legal output final",
+      "note": "Selesai."
+    },
+    {
+      "id": "b_vhs",
+      "projectId": "p_vhs",
+      "stages": [
+        {
+          "name": "Intake Data Tanah",
+          "state": "Selesai"
+        },
+        {
+          "name": "Legal Due Diligence",
+          "state": "Selesai"
+        },
+        {
+          "name": "Validasi Dokumen",
+          "state": "Selesai"
+        },
+        {
+          "name": "Pengukuran / Pemetaan",
+          "state": "Proses"
+        },
+        {
+          "name": "Proses BPN",
+          "state": "Belum"
+        },
+        {
+          "name": "Pemecahan / Pemisahan",
+          "state": "Belum"
+        },
+        {
+          "name": "Verifikasi Legal Output",
+          "state": "Belum"
+        },
+        {
+          "name": "KPR-Ready",
+          "state": "Belum"
+        },
+        {
+          "name": "Akad-Ready",
+          "state": "Belum"
+        },
+        {
+          "name": "Arsip Final",
+          "state": "Belum"
+        }
+      ],
+      "aging": 24,
+      "sla": 14,
+      "evidence": "Berita acara ukur",
+      "note": "Selisih luas minor."
+    }
+  ],
+  "pbg": [
+    {
+      "id": "g_zhl",
+      "projectId": "p_zhl",
+      "stages": [
+        {
+          "name": "Permit Intake",
+          "state": "Selesai"
+        },
+        {
+          "name": "Kesesuaian Ruang / Zonasi",
+          "state": "Selesai"
+        },
+        {
+          "name": "Design / Siteplan Freeze",
+          "state": "Selesai"
+        },
+        {
+          "name": "Dokumen Teknis",
+          "state": "Selesai"
+        },
+        {
+          "name": "Dokumen Lingkungan",
+          "state": "Selesai"
+        },
+        {
+          "name": "Submit Resmi",
+          "state": "Selesai"
+        },
+        {
+          "name": "Review Pemda / SIMBG",
+          "state": "Proses"
+        },
+        {
+          "name": "Revisi",
+          "state": "Belum"
+        },
+        {
+          "name": "Retribusi",
+          "state": "Belum"
+        },
+        {
+          "name": "PBG Terbit",
+          "state": "Belum"
+        },
+        {
+          "name": "Arsip & Integrasi",
+          "state": "Belum"
+        }
+      ],
+      "aging": 12,
+      "sla": 60,
+      "regNo": "SIMBG-2026-0451",
+      "note": "Sedang review Pemda."
+    },
+    {
+      "id": "g_thp",
+      "projectId": "p_thp",
+      "stages": [
+        {
+          "name": "Permit Intake",
+          "state": "Selesai"
+        },
+        {
+          "name": "Kesesuaian Ruang / Zonasi",
+          "state": "Selesai"
+        },
+        {
+          "name": "Design / Siteplan Freeze",
+          "state": "Terkendala"
+        },
+        {
+          "name": "Dokumen Teknis",
+          "state": "Belum"
+        },
+        {
+          "name": "Dokumen Lingkungan",
+          "state": "Belum"
+        },
+        {
+          "name": "Submit Resmi",
+          "state": "Belum"
+        },
+        {
+          "name": "Review Pemda / SIMBG",
+          "state": "Belum"
+        },
+        {
+          "name": "Revisi",
+          "state": "Belum"
+        },
+        {
+          "name": "Retribusi",
+          "state": "Belum"
+        },
+        {
+          "name": "PBG Terbit",
+          "state": "Belum"
+        },
+        {
+          "name": "Arsip & Integrasi",
+          "state": "Belum"
+        }
+      ],
+      "aging": 0,
+      "sla": 60,
+      "regNo": "",
+      "note": "Belum submit, siteplan belum freeze."
+    },
+    {
+      "id": "g_lhc",
+      "projectId": "p_lhc",
+      "stages": [
+        {
+          "name": "Permit Intake",
+          "state": "Selesai"
+        },
+        {
+          "name": "Kesesuaian Ruang / Zonasi",
+          "state": "Selesai"
+        },
+        {
+          "name": "Design / Siteplan Freeze",
+          "state": "Selesai"
+        },
+        {
+          "name": "Dokumen Teknis",
+          "state": "Selesai"
+        },
+        {
+          "name": "Dokumen Lingkungan",
+          "state": "Selesai"
+        },
+        {
+          "name": "Submit Resmi",
+          "state": "Selesai"
+        },
+        {
+          "name": "Review Pemda / SIMBG",
+          "state": "Selesai"
+        },
+        {
+          "name": "Revisi",
+          "state": "Selesai"
+        },
+        {
+          "name": "Retribusi",
+          "state": "Selesai"
+        },
+        {
+          "name": "PBG Terbit",
+          "state": "Selesai"
+        },
+        {
+          "name": "Arsip & Integrasi",
+          "state": "Selesai"
+        }
+      ],
+      "aging": 0,
+      "sla": 60,
+      "regNo": "SIMBG-2025-1180",
+      "note": "PBG terbit."
+    },
+    {
+      "id": "g_vhs",
+      "projectId": "p_vhs",
+      "stages": [
+        {
+          "name": "Permit Intake",
+          "state": "Selesai"
+        },
+        {
+          "name": "Kesesuaian Ruang / Zonasi",
+          "state": "Selesai"
+        },
+        {
+          "name": "Design / Siteplan Freeze",
+          "state": "Selesai"
+        },
+        {
+          "name": "Dokumen Teknis",
+          "state": "Selesai"
+        },
+        {
+          "name": "Dokumen Lingkungan",
+          "state": "Selesai"
+        },
+        {
+          "name": "Submit Resmi",
+          "state": "Selesai"
+        },
+        {
+          "name": "Review Pemda / SIMBG",
+          "state": "Selesai"
+        },
+        {
+          "name": "Revisi",
+          "state": "Terkendala"
+        },
+        {
+          "name": "Retribusi",
+          "state": "Belum"
+        },
+        {
+          "name": "PBG Terbit",
+          "state": "Belum"
+        },
+        {
+          "name": "Arsip & Integrasi",
+          "state": "Belum"
+        }
+      ],
+      "aging": 24,
+      "sla": 60,
+      "regNo": "SIMBG-2026-0388",
+      "note": "Revisi teknis terbuka."
+    }
+  ],
+  "pks": [
+    {
+      "id": "k1",
+      "projectId": "p_zhl",
+      "bank": "BSI",
+      "state": "On Process",
+      "sla": 21,
+      "aging": 14,
+      "note": "Menunggu dokumen tambahan unit."
+    },
+    {
+      "id": "k2",
+      "projectId": "p_zhl",
+      "bank": "BTN Syariah",
+      "state": "Ready",
+      "sla": 21,
+      "aging": 6,
+      "note": "PKS aktif."
+    },
+    {
+      "id": "k3",
+      "projectId": "p_thp",
+      "bank": "BSI",
+      "state": "Belum",
+      "sla": 21,
+      "aging": 0,
+      "note": "Menunggu legal pack."
+    },
+    {
+      "id": "k4",
+      "projectId": "p_lhc",
+      "bank": "BJB Syariah",
+      "state": "Ready",
+      "sla": 21,
+      "aging": 0,
+      "note": "Aktif."
+    },
+    {
+      "id": "k5",
+      "projectId": "p_vhs",
+      "bank": "BTN Syariah",
+      "state": "On Process",
+      "sla": 21,
+      "aging": 11,
+      "note": "Review dokumen."
+    }
+  ],
+  "documents": [
+    {
+      "id": "d1",
+      "projectId": "p_zhl",
+      "nama": "Legal Pack Bank (BSI)",
+      "kategori": "KPR",
+      "lengkap": 82,
+      "status": "Kuning",
+      "note": "Dokumen unit kurang."
+    },
+    {
+      "id": "d2",
+      "projectId": "p_thp",
+      "nama": "Legal Output / Sertifikat",
+      "kategori": "Legal",
+      "lengkap": 55,
+      "status": "Merah",
+      "note": "Validasi belum selesai."
+    },
+    {
+      "id": "d3",
+      "projectId": "p_lhc",
+      "nama": "Arsip Legal + PBG",
+      "kategori": "Arsip",
+      "lengkap": 100,
+      "status": "Hijau",
+      "note": "Lengkap."
+    },
+    {
+      "id": "d4",
+      "projectId": "p_vhs",
+      "nama": "Dokumen Teknis PBG",
+      "kategori": "Permit",
+      "lengkap": 88,
+      "status": "Kuning",
+      "note": "Revisi teknis."
+    }
+  ],
+  "risks": [
+    {
+      "id": "r1",
+      "projectId": "p_thp",
+      "risiko": "PBG belum submit",
+      "penyebab": "Design/siteplan belum freeze",
+      "dampak": "Launching & progres berisiko",
+      "level": "Merah",
+      "earlyWarning": "Perencanaan belum final",
+      "mitigasi": "Gate design freeze + war room",
+      "owner": "Perencanaan + Legal"
+    },
+    {
+      "id": "r2",
+      "projectId": "p_thp",
+      "risiko": "Unit tidak akad-ready",
+      "penyebab": "Pemecahan belum selesai",
+      "dampak": "Akad & cash-in tertahan",
+      "level": "Merah",
+      "earlyWarning": "Booking masuk, dokumen belum siap",
+      "mitigasi": "Prioritaskan unit terjual",
+      "owner": "Legal"
+    },
+    {
+      "id": "r3",
+      "projectId": "p_zhl",
+      "risiko": "PKS bank terlambat",
+      "penyebab": "Dokumen bank belum lengkap",
+      "dampak": "KPR lambat",
+      "level": "Merah",
+      "earlyWarning": "Bank minta dokumen berulang",
+      "mitigasi": "PKS bank sprint",
+      "owner": "Legal + KPR"
+    },
+    {
+      "id": "r4",
+      "projectId": "p_vhs",
+      "risiko": "Revisi PBG berulang",
+      "penyebab": "Dokumen teknis tidak memenuhi catatan",
+      "dampak": "Izin mundur",
+      "level": "Kuning",
+      "earlyWarning": "Reviewer beri catatan sama",
+      "mitigasi": "Joint review teknis",
+      "owner": "Legal + Teknik"
+    },
+    {
+      "id": "r5",
+      "projectId": "p_thp",
+      "risiko": "Cash-in signifikan tertahan",
+      "penyebab": "Legal pack belum lengkap + PBG belum submit",
+      "dampak": "Cash-in Rp 9,8 M berisiko",
+      "level": "Merah Strategis",
+      "earlyWarning": "Akad besar mundur",
+      "mitigasi": "War room CEO 7 hari",
+      "owner": "Dirops + Kadep SDM Legal"
+    }
+  ],
+  "bottlenecks": [
+    {
+      "id": "bn1",
+      "projectId": "p_thp",
+      "bottleneck": "Siteplan belum di-freeze",
+      "stage": "Design / Siteplan Freeze",
+      "sejak": "2026-05-20",
+      "pic": "Perencanaan",
+      "status": "Merah"
+    },
+    {
+      "id": "bn2",
+      "projectId": "p_zhl",
+      "bottleneck": "Peta bidang perlu koreksi",
+      "stage": "Pengukuran / Pemetaan",
+      "sejak": "2026-05-28",
+      "pic": "Legal + Teknik",
+      "status": "Kuning"
+    },
+    {
+      "id": "bn3",
+      "projectId": "p_vhs",
+      "bottleneck": "Revisi teknis PBG terbuka",
+      "stage": "Revisi",
+      "sejak": "2026-05-25",
+      "pic": "Perencanaan",
+      "status": "Kuning"
+    }
+  ],
+  "escalations": [
+    {
+      "id": "e1",
+      "projectId": "p_thp",
+      "issue": "PBG belum submit + cash-in besar at risk",
+      "level": "Merah Strategis",
+      "escalatedTo": "CEO",
+      "tanggal": "2026-06-02",
+      "status": "Open",
+      "keputusan": "Bentuk task force 7 hari (Dirops)"
+    },
+    {
+      "id": "e2",
+      "projectId": "p_zhl",
+      "issue": "Sertifikat unit pending",
+      "level": "Kuning",
+      "escalatedTo": "Kadep SDM & Legal",
+      "tanggal": "2026-06-03",
+      "status": "On Progress",
+      "keputusan": "Revisi data peta bidang"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev1",
+      "projectId": "p_zhl",
+      "jenis": "Proses BPN berjalan",
+      "deskripsi": "Screenshot SIMBG + tanda terima",
+      "tanggal": "2026-06-03",
+      "valid": true,
+      "link": "drive://legal/zhl/bpn"
+    },
+    {
+      "id": "ev2",
+      "projectId": "p_zhl",
+      "jenis": "PBG submitted",
+      "deskripsi": "Nomor registrasi SIMBG-2026-0451",
+      "tanggal": "2026-05-22",
+      "valid": true,
+      "link": "drive://legal/zhl/pbg"
+    },
+    {
+      "id": "ev3",
+      "projectId": "p_thp",
+      "jenis": "Legal DD selesai",
+      "deskripsi": "Laporan due diligence",
+      "tanggal": "2026-05-10",
+      "valid": true,
+      "link": "drive://legal/thp/dd"
+    },
+    {
+      "id": "ev4",
+      "projectId": "p_vhs",
+      "jenis": "PBG revisi",
+      "deskripsi": "Catatan reviewer + dokumen revisi v2",
+      "tanggal": "2026-05-30",
+      "valid": true,
+      "link": "drive://legal/vhs/rev"
+    }
+  ],
+  "actions": [
+    {
+      "id": "a1",
+      "projectId": "p_thp",
+      "action": "Lock design & submit PBG",
+      "pic": "Perencanaan + Legal",
+      "deadline": "2026-06-07",
+      "status": "Open",
+      "week": "W1 Juni"
+    },
+    {
+      "id": "a2",
+      "projectId": "p_zhl",
+      "action": "Follow-up BPN & validasi Notaris/PPAT",
+      "pic": "Legal Officer",
+      "deadline": "2026-06-07",
+      "status": "On Progress",
+      "week": "W1 Juni"
+    },
+    {
+      "id": "a3",
+      "projectId": "p_vhs",
+      "action": "Submit revisi teknis PBG",
+      "pic": "Legal + Perencanaan",
+      "deadline": "2026-06-06",
+      "status": "On Progress",
+      "week": "W1 Juni"
+    },
+    {
+      "id": "a4",
+      "projectId": "p_thp",
+      "action": "PKS bank sprint (BSI)",
+      "pic": "Legal + KPR",
+      "deadline": "2026-06-09",
+      "status": "Open",
+      "week": "W1 Juni"
+    }
+  ],
+  "daily": [
+    {
+      "id": "dl1",
+      "tanggal": "2026-06-04",
+      "projectId": "p_zhl",
+      "stage": "Proses BPN",
+      "statusKemarin": "Review",
+      "updateHariIni": "Dokumen tambahan diterima",
+      "evidence": "Screenshot / tanda terima",
+      "issue": "Peta bidang perlu koreksi",
+      "status": "Kuning",
+      "pic": "Legal",
+      "nextAction": "Follow-up BPN",
+      "deadline": "2026-06-06"
+    },
+    {
+      "id": "dl2",
+      "tanggal": "2026-06-04",
+      "projectId": "p_thp",
+      "stage": "Design / Siteplan Freeze",
+      "statusKemarin": "Draft",
+      "updateHariIni": "Gambar belum final",
+      "evidence": "CICLE task",
+      "issue": "Design belum freeze",
+      "status": "Merah",
+      "pic": "Perencanaan",
+      "nextAction": "Finalisasi siteplan",
+      "deadline": "2026-06-05"
+    }
+  ],
+  "weekly": [
+    {
+      "id": "w1",
+      "week": "W1 Juni",
+      "projectId": "p_thp",
+      "issue": "PBG belum submit",
+      "dampak": "Launching risk",
+      "level": "Merah",
+      "rootCause": "Design belum freeze",
+      "pic": "Perencanaan + Legal",
+      "action": "Lock design + submit",
+      "deadline": "2026-06-07",
+      "eskalasi": "Dirops",
+      "status": "Open"
+    },
+    {
+      "id": "w2",
+      "week": "W1 Juni",
+      "projectId": "p_zhl",
+      "issue": "Sertifikat unit pending",
+      "dampak": "Akad risk",
+      "level": "Kuning",
+      "rootCause": "Peta bidang koreksi",
+      "pic": "Legal",
+      "action": "Revisi data",
+      "deadline": "2026-06-06",
+      "eskalasi": "Kadep",
+      "status": "On Progress"
+    }
+  ]
+}
