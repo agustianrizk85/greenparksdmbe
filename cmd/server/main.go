@@ -15,6 +15,7 @@ import (
 	"time"
 
 	"greenpark/sdm/internal/auth"
+	"greenpark/sdm/internal/authmw"
 	"greenpark/sdm/internal/config"
 	"greenpark/sdm/internal/repository"
 	"greenpark/sdm/internal/service"
@@ -30,7 +31,15 @@ func main() {
 	}
 	authSvc := auth.New(repo, cfg.SessionTTL)
 	svc := service.New(repo, authSvc)
-	handler := httptransport.NewHandler(svc)
+	verifier, err := authmw.New(authmw.Options{
+		JWKSURL:    cfg.AuthJWKSURL,
+		Department: "sdm",
+		Issuer:     cfg.AuthIssuer,
+	})
+	if err != nil {
+		log.Fatalf("sdm: auth verifier: %v", err)
+	}
+	handler := httptransport.NewHandler(svc, verifier)
 	router := httptransport.NewRouter(handler, cfg.AllowOrigin)
 
 	srv := &http.Server{

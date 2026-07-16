@@ -7,19 +7,25 @@ import (
 	"net/http"
 	"strings"
 
+	"greenpark/sdm/internal/authmw"
 	"greenpark/sdm/internal/domain"
 	"greenpark/sdm/internal/repository"
 	"greenpark/sdm/internal/service"
 )
 
+// deptCode is this service's department code in the master-auth token.
+const deptCode = "sdm"
+
 // Handler holds the dependencies for the HTTP handlers.
 type Handler struct {
-	svc *service.Service
+	svc    *service.Service
+	verify *authmw.Verifier
 }
 
-// NewHandler creates a Handler bound to the service.
-func NewHandler(svc *service.Service) *Handler {
-	return &Handler{svc: svc}
+// NewHandler creates a Handler bound to the service and the master-auth token
+// verifier.
+func NewHandler(svc *service.Service, verify *authmw.Verifier) *Handler {
+	return &Handler{svc: svc, verify: verify}
 }
 
 /* ---------------------------- auth plumbing ---------------------------- */
@@ -36,14 +42,27 @@ func bearer(r *http.Request) string {
 	return ""
 }
 
+// userFromClaims maps a verified master-auth token to this service's User shape.
+func userFromClaims(c authmw.Claims) domain.User {
+	role := domain.RoleViewer
+	if c.IsAdmin(deptCode) {
+		role = domain.RoleAdmin
+	}
+	return domain.User{ID: c.Subject, Username: c.Username, Name: c.Name, Role: role}
+}
+
 func (h *Handler) requireAuth(next http.HandlerFunc) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
-		u, err := h.svc.Validate(bearer(r))
+		claims, err := h.verify.Verify(bearer(r))
 		if err != nil {
 			writeError(w, http.StatusUnauthorized, err.Error())
 			return
 		}
-		next(w, r.WithContext(context.WithValue(r.Context(), userCtxKey, u)))
+		if !claims.CanAccess(deptCode) {
+			writeError(w, http.StatusForbidden, "tidak punya akses ke departemen "+deptCode)
+			return
+		}
+		next(w, r.WithContext(context.WithValue(r.Context(), userCtxKey, userFromClaims(claims))))
 	}
 }
 
@@ -68,30 +87,8 @@ func decodeRecord(w http.ResponseWriter, r *http.Request) (domain.Record, bool) 
 
 /* ---------------------------- auth handlers ---------------------------- */
 
-type loginReq struct {
-	Username string `json:"username"`
-	Password string `json:"password"`
-}
-
-func (h *Handler) login(w http.ResponseWriter, r *http.Request) {
-	var req loginReq
-	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
-		writeError(w, http.StatusBadRequest, "body JSON tidak valid")
-		return
-	}
-	token, user, err := h.svc.Login(req.Username, req.Password)
-	if err != nil {
-		writeError(w, http.StatusUnauthorized, err.Error())
-		return
-	}
-	writeJSON(w, http.StatusOK, map[string]any{"token": token, "user": user})
-}
-
-func (h *Handler) logout(w http.ResponseWriter, r *http.Request) {
-	h.svc.Logout(bearer(r))
-	writeJSON(w, http.StatusOK, map[string]string{"status": "ok"})
-}
-
+// me returns the caller derived from the verified master-auth token. Login,
+// logout and refresh are owned by the master auth service, not this backend.
 func (h *Handler) me(w http.ResponseWriter, r *http.Request) {
 	u, _ := r.Context().Value(userCtxKey).(domain.User)
 	writeJSON(w, http.StatusOK, u)

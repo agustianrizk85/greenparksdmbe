@@ -13,11 +13,9 @@ func NewRouter(h *Handler, allowOrigin string) http.Handler {
 
 	// public
 	mux.HandleFunc("GET /api/health", h.health)
-	mux.HandleFunc("POST /api/auth/login", h.login)
 
-	// authenticated session
+	// authenticated session — login/logout/refresh owned by master auth (SSO)
 	mux.HandleFunc("GET /api/auth/me", h.requireAuth(h.me))
-	mux.HandleFunc("POST /api/auth/logout", h.requireAuth(h.logout))
 
 	// reads
 	mux.HandleFunc("GET /api/data", h.requireAuth(h.data))

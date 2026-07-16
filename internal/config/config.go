@@ -12,7 +12,11 @@ type Config struct {
 	Port        string        // HTTP port to listen on
 	AllowOrigin string        // CORS allowed origin
 	DataPath    string        // JSON file the data is persisted to
-	SessionTTL  time.Duration // bearer-token session lifetime
+	SessionTTL  time.Duration // bearer-token session lifetime (legacy; unused under SSO)
+
+	// Master auth (SSO): verify access tokens via the central auth public key.
+	AuthJWKSURL string
+	AuthIssuer  string
 }
 
 // Load reads configuration from the environment, applying defaults.
@@ -22,6 +26,8 @@ func Load() Config {
 		AllowOrigin: getenv("SDM_ALLOW_ORIGIN", "*"),
 		DataPath:    getenv("SDM_DATA_PATH", "data/sdm-data.json"),
 		SessionTTL:  12 * time.Hour,
+		AuthJWKSURL: getenv("AUTH_JWKS_URL", "http://localhost:8090/.well-known/jwks.json"),
+		AuthIssuer:  getenv("AUTH_ISSUER", "greenpark-auth"),
 	}
 }
 
